@@ -25,9 +25,7 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-purple-600 via-blue-600 to-pink-500 p-6">
-      <div className="w-full max-w-lg mx-auto flex justify-center">
-        <div className="w-full max-w-md">
-        
+      <div className="w-full max-w-md">
         <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
@@ -104,7 +102,6 @@ export default function HomePage() {
               ✨ Made by Tony • Powered by Next.js
             </p>
           </div>
-        </div>
         </div>
       </div>
     </main>
