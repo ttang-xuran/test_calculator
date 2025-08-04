@@ -24,9 +24,30 @@ export default function HomePage() {
   const { yearlyBudget, monthlyBudget, weeklyBudget } = calculateBudget();
 
   return (
-    <main className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-purple-600 via-blue-600 to-pink-500 p-6">
-      <div className="w-full max-w-md">
-        <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
+    <main 
+      className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-purple-600 via-blue-600 to-pink-500 p-6"
+      style={{
+        minHeight: '100vh',
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'linear-gradient(to bottom right, #9333ea, #2563eb, #ec4899)',
+        padding: '1.5rem'
+      }}
+    >
+      <div className="w-full max-w-md" style={{ width: '100%', maxWidth: '28rem' }}>
+        <div 
+          className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20"
+          style={{
+            backgroundColor: 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(4px)',
+            borderRadius: '1.5rem',
+            padding: '2rem',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+            border: '1px solid rgba(255, 255, 255, 0.2)'
+          }}
+        >
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
               💰 Financial Calculator
