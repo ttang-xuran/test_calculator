@@ -21,7 +21,20 @@ export default function HomePage() {
     return { yearlyBudget, monthlyBudget, weeklyBudget };
   };
 
+  const calculateInvestmentGrowth = (yearlyBudget) => {
+    if (yearlyBudget <= 0) return 0;
+    
+    // Future Value = PV * (1 + r)^n where PV = yearly budget, r = 5%, n = 10 years
+    // This assumes investing the yearly budget once at the beginning and letting it compound
+    const rate = 0.05;
+    const years = 10;
+    const futureValue = yearlyBudget * Math.pow(1 + rate, years);
+    
+    return futureValue;
+  };
+
   const { yearlyBudget, monthlyBudget, weeklyBudget } = calculateBudget();
+  const investmentValue = calculateInvestmentGrowth(yearlyBudget);
 
   return (
     <main 
@@ -117,6 +130,26 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+
+          {yearlyBudget > 0 && (
+            <div className="mt-8">
+              <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+                💰 Investment Projection
+              </h2>
+              
+              <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-6 text-white shadow-lg transform hover:scale-105 transition-transform duration-200">
+                <div className="text-center">
+                  <p className="text-sm font-medium opacity-90 mb-1">📈 10-Year Growth (5% Annual Return)</p>
+                  <p className="text-3xl font-bold">
+                    ${investmentValue.toFixed(2)}
+                  </p>
+                  <p className="text-xs opacity-75 mt-2">
+                    If you invest your yearly budget of ${yearlyBudget.toFixed(2)}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
 
           <div className="mt-8 text-center">
             <p className="text-sm text-gray-500">
